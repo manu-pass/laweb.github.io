@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Botones</title>
+    <style>
+        body {
+            background-image: url('img.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arian, sans-serif;
+        }
+        .box {
+            background: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 80%;
+            margin: 100px auto; /* Centrar verticalmente */
+        }
+        h1 {
+            color: red;
+            margin: 0 0 20px 0;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .button-container {
+            position: relative;
+            text-align: center;
+            height: 200px;
+        }
+        #button-no {
+            position: absolute;
+        }
+    </style>
+    <script>
+        function moveButton() {
+            var button = document.getElementById('button-no');
+            var container = document.querySelector('.button-container');
+            var x = Math.random() * (container.clientWidth - button.clientWidth);
+            var y = Math.random() * (container.clientHeight - button.clientHeight);
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+        
+        // Llamar a la función moveButton cada 500 milisegundos
+        setInterval(moveButton, 20);
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h1>¿QUIERES SER MI NOVIA?</h1>
+        <div class="button-container">
+            <button onclick="window.location.href='respuesta.html'">SÍ ;)</button>
+            <button id="button-no">no °_°</button>
+        </div>
+    </div>
+</body>
+</html>

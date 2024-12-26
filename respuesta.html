@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respuesta</title>
+    <style>
+        body {
+            background-image: url('img.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arian, sans-serif;
+            overflow: hidden; /* Para evitar el scroll si se crean muchos corazones */
+        }
+        .box {
+            background: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 80%;
+            margin: 100px auto; /* Centrar verticalmente */
+        }
+        h1 {
+            color: black;
+        }
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: fall 3s linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.textContent = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 10 + 'vh';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h1>¡WOW sabía que dirías que sí!</h1>
+    </div>
+</body>
+</html>
