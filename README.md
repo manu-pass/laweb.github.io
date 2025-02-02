@@ -1,1 +1,1 @@
-esta web es para declaraciones
+Solo para ti 😏 😉
